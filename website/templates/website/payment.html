@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+  function isNumber(evt) {
+    evt = (evt) ? evt : window.event;
+    var charCode = (evt.which) ? evt.which : evt.keyCode;
+    if (charCode > 31 && (charCode < 48 || charCode > 57) && charCode != 45) {
+        return false;
+    }
+    return true;
+}
+</script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {
+  font-family: Arial;
+  font-size: 17px;
+  padding: 8px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.row {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+  margin: 0 -16px;
+}
+
+.col-25 {
+  -ms-flex: 25%; /* IE10 */
+  flex: 25%;
+}
+
+.col-50 {
+  -ms-flex: 50%; /* IE10 */
+  flex: 50%;
+}
+
+.col-75 {
+  -ms-flex: 75%; /* IE10 */
+  flex: 75%;
+}
+
+.col-25,
+.col-50,
+.col-75 {
+  padding: 0 16px;
+}
+
+.container {
+  background-color: #f2f2f2;
+  padding: 15px 50px;
+  border: 1px solid lightgrey;
+  border-radius: 3px;
+  width:80%;
+  margin:auto;
+}
+
+input[type=text] {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+select {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+label {
+  margin-bottom: 10px;
+  display: block;
+}
+
+.icon-container {
+  margin-bottom: 20px;
+  padding: 7px 0;
+  font-size: 24px;
+}
+
+.btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  width: 100%;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 17px;
+}
+
+.btn:hover {
+  background-color: #45a049;
+}
+
+a {
+  color: #2196F3;
+}
+
+hr {
+  border: 1px solid lightgrey;
+}
+@media (max-width: 800px) {
+  .row {
+    flex-direction: column-reverse;
+  }
+  .col-25 {
+    margin-bottom: 20px;
+  }
+}
+</style>
+</head>
+<body>
+<div class="row">
+  <div class="col-75">
+    <div class="container">
+      <form role="form" action="/payment/" method="POST">
+           {% csrf_token %}
+        <div class="row">
+          <div class="col-50">
+            <h3>Payment</h3>
+            <label for="fname">Accepted Cards</label>
+            <div class="icon-container">
+              <i class="fa fa-cc-visa" style="color:navy;"></i>
+              <i class="fa fa-cc-amex" style="color:blue;"></i>
+              <i class="fa fa-cc-mastercard" style="color:red;"></i>
+              <i class="fa fa-cc-discover" style="color:orange;"></i>
+            </div>
+            <label for="cname">Name on Card</label>
+            <input type="text" id="cname" name="name" placeholder="Your Name">
+            <label for="ccnum">Credit/Debit card number</label>
+            <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444" title="invalid card number" pattern="^(?:4[0-9]{12}(?:[0-9]{3})?|[25][1-7][0-9]{14}|6(?:011|5[0-9][0-9])[0-9]{12}|3[47][0-9]{13}|3(?:0[0-5]|[68][0-9])[0-9]{11}|(?:2131|1800|35\d{3})\d{11})$" maxlength="19" onkeypress="return isNumber(event)">
+            <label for="expmonth">Expiry Month</label>
+            <select type="text" id="expmonth" name="expmonth" placeholder="Month"> 
+              <option  value="Jan">January</option>
+              <option  value="Feb">February</option>
+              <option value="Mar">March</option>
+              <option  value="Apr">April</option>
+              <option  value="May">May</option>
+              <option  value="Jun">June</option>
+              <option  value="Jul">July</option>
+              <option  value="Aug">August</option>
+              <option  value="Sep">September</option>
+              <option  value="Oct">October</option>
+              <option  value="Nov">November</option>
+              <option  value="Dec">December</option>
+            </select>
+            <div class="row">
+              <div class="col-50">
+                <label for="expyear">Expiry Year</label>
+                <input type="text" id="expyear" name="expyear" placeholder="Year">
+              </div>
+              <div class="col-50">
+                <label for="cvv">CVV</label>
+                <input type="text" id="cvv" name="cvv" placeholder="CVV" pattern="^[0-9]{3,4}$" title="enter valid cvv">
+              </div>
+              <div class="col-50">
+                <label for="cvv">amount</label>
+                <input type="text"  name="amount" value ="{{ addmon }}" placeholder="amount" pattern="^\$?[0-9]?((\.[0-9]+)|([0-9]+(\.[0-9]+)?))$" title="enter valid amount">
+              </div>
+            </div>
+          </div>
+          
+        </div>
+        <input type="submit" value="Continue to checkout" class="btn">
+      </form>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

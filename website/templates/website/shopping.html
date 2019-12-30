@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	{% load static %}
+<title>Wallee Shopee</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="Colo Shop Template">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href='{% static "shopping/styles/bootstrap4/bootstrap.min.css"%}'>
+<link rel="stylesheet" type="text/css" href='{% static "shopping/plugins/OwlCarousel2-2.2.1/owl.carousel.css"%}'>
+<link rel="stylesheet" type="text/css" href='{% static "shopping/plugins/OwlCarousel2-2.2.1/owl.theme.default.css"%}'>
+<link rel="stylesheet" type="text/css" href='{% static "shopping/plugins/OwlCarousel2-2.2.1/animate.css"%}'>
+<link rel="stylesheet" type="text/css" href='{% static "shopping/styles/main_styles.css"%}'>
+<link rel="stylesheet" type="text/css" href='{% static "shopping/styles/responsive.css"%}'>
+</head>
+
+<body>
+
+<div class="super_container">
+
+	<!-- Header -->
+
+	<header class="header trans_300">
+
+
+
+		<!-- Main Navigation -->
+
+		<div class="main_nav_container">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12 text-right">
+						<div class="logo_container">
+							<a href="#">Wallee<span>Shopee</span></a>
+						</div>
+						<nav class="navbar">
+							<ul class="navbar_menu">
+
+								<li><a href="/home/">Back To Home</a></li>
+							</ul>
+							<ul class="navbar_user">
+							<!-- Nav Item - User Information -->
+
+
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ user.username}} </span>
+
+							</ul>
+						</nav>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</header>
+
+	<div class="fs_menu_overlay"></div>
+	<div class="hamburger_menu">
+		<div class="hamburger_close"><i class="fa fa-times" aria-hidden="true"></i></div>
+		<div class="hamburger_menu_content text-right">
+			<ul class="menu_top_nav">
+				<li class="menu_item has-children">
+					<a href="#">
+						usd
+						<i class="fa fa-angle-down"></i>
+					</a>
+					<ul class="menu_selection">
+						<li><a href="#">cad</a></li>
+						<li><a href="#">aud</a></li>
+						<li><a href="#">eur</a></li>
+						<li><a href="#">gbp</a></li>
+					</ul>
+				</li>
+				<li class="menu_item has-children">
+					<a href="#">
+						English
+						<i class="fa fa-angle-down"></i>
+					</a>
+					<ul class="menu_selection">
+						<li><a href="#">French</a></li>
+						<li><a href="#">Italian</a></li>
+						<li><a href="#">German</a></li>
+						<li><a href="#">Spanish</a></li>
+					</ul>
+				</li>
+				<li class="menu_item has-children">
+					<a href="#">
+						My Account
+						<i class="fa fa-angle-down"></i>
+					</a>
+					<ul class="menu_selection">
+						<li><a href="#"><i class="fa fa-sign-in" aria-hidden="true"></i>Sign In</a></li>
+						<li><a href="#"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a></li>
+					</ul>
+				</li>
+				<li class="menu_item"><a href="#">home</a></li>
+				<li class="menu_item"><a href="#">shop</a></li>
+				<li class="menu_item"><a href="#">promotion</a></li>
+				<li class="menu_item"><a href="#">pages</a></li>
+				<li class="menu_item"><a href="#">blog</a></li>
+				<li class="menu_item"><a href="#">contact</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<!-- Slider -->
+
+	<div class="main_slider" style="background-image:url({% static 'shopping/images/ad1.jpg' %})">
+		<div class="container fill_height">
+			<div class="row align-items-center fill_height">
+				<div class="col">
+					<div class="main_slider_content">
+						<h6></h6>
+						<h1></h1>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Banner -->
+
+	<div class="banner">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4">
+					<div class="banner_item align-items-center" style="background-image:url({% static 'shopping/images/menu1.jpg' %})">
+						<div class="banner_category">
+							<a href="#">Mobiles</a>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myUL {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#myUL li a {
+  border: 1px solid #ddd;
+  margin-top: -1px; /* Prevent double borders */
+  background-color: #f6f6f6;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  color: black;
+  display: block
+}
+
+#myUL li a:hover:not(.header) {
+  background-color: #eee;
+}
+</style>
+</head>
+<body>
+
+<h2>Search</h2>
+
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for products.." title="Type in a name">
+
+<ul id="myUL">
+  <li><a href="#prod1">Samsung M20</a></li>
+  <li><a href="#prod2">Redmi 6 Pro</a></li>
+  <li><a href="#prod3">Oneplus 6T</a></li>
+  <li><a href="#prod4">Oppo F9 Pro</a></li>
+  <li><a href="#prod5">iPhone XS Max</a></li>
+  <li><a href="#prod6">Macbook Air 2017</a></li>
+  <li><a href="#prod7">Alienware 15R3</a></li>
+  <li><a href="#prod8">Asus Rog Strix</a></li>
+  <li><a href="#prod9">Microsoft Surface Pro</a></li>
+  <li><a href="#prod10">MI TV 4A Pro</a></li>
+  <li><a href="#prod11">Sony Home Theater</a></li>
+  <li><a href="#prod12">Canon 1300D DSLR</a></li>
+  <li><a href="#prod13">Apple Watch</a></li>
+  <li><a href="#prod14">LG Refridgerator</a></li>
+  <li><a href="#prod15">Bosch Washing Machine</a></li>
+</ul>
+
+	<!-- New Arrivals -->
+<form action="/action_page.php" method="get">
+	<div class="new_arrivals">
+		<div class="container">
+			<div class="row">
+				<div class="col text-center">
+					<div class="section_title new_arrivals_title">
+						<h2>New Arrivals</h2>
+					</div>
+				</div>
+			</div>
+			<div class="row align-items-center">
+				<div class="col text-center">
+					<div class="new_arrivals_sorting">
+						<ul class="arrivals_grid_sorting clearfix button-group filters-button-group">
+							<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center active is-checked" data-filter="*">all</li>
+							<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".mobiles">Mobiles</li>
+							<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".appliance">Appliances</li>
+							<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".laptop">Laptop</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+					<div class="product-grid" data-isotope='{ "itemSelector": ".product-item", "layoutMode": "fitRows" }'>
+
+
+						<!-- Product 1 -->
+
+						<div class="product-item mobiles">
+							<div class="product discount product_filter">
+								<div class="product_image">
+									<a id="prod1"></a>
+									<img src="{% static 'shopping/images/mob1.jpg' %}" alt="">
+								</div>
+								<div class="shopping_cart shopping_cart_left"></div>
+
+								<div class="product_info">
+									<h6 class="product_name"><a href="single.html">Samsung M20</a></h6>
+									<div class="product_price">Rs13000</div>
+								Quantity <input type="number" id="qty1" name="quantity" min="1" max="5"><br/>
+								Add to cart <input id="ch1" type="checkbox" name="add1" value="1" onclick="myFunction1()"><br>
+								Total <a id="total1"></a>
+								</div>
+							</div>
+						</div>
+
+						<!-- Product 2 -->
+
+						<div class="product-item mobiles">
+							<div class="product product_filter">
+								<div class="product_image">
+									<a id="prod2"></a>
+									<img src="{% static 'shopping/images/mob2.jpg' %}" alt="">
+								</div>
+								<div class="shopping_cart"></div>
+								<div class="product_bubble product_bubble_left product_bubble_green d-flex flex-column align-items-center"><span>new</span></div>
+								<div class="product_info">
+									<h6 class="product_name"><a href="single.html">Redmi 6 Pro</a></h6>
+									<div class="product_price">Rs12000</div>
+									Quantity <input type="number" id="qty2" name="quantity" min="1" max="5"><br/>
+									Add to cart <input id="ch2"type="checkbox" name="add1" value="1" onclick="myFunction2()"><br>
+									Total <a id="total2"></a>
+								</div>
+							</div>
+
+						</div>
+
+						<!-- Product 3 -->
+
+						<div class="product-item mobiles">
+							<div class="product product_filter">
+								<div class="product_image">
+									<a id="prod3"></a>
+									<img src="{% static 'shopping/images/mob3.jpg' %}" alt="">
+								</div>
+								<div class="favorite"></div>
+								<div class="product_info">
+									<h6 class="product_name"><a href="single.html">Oneplus 6T</a></h6>
+									<div class="product_price">Rs27000</div>
+									Quantity <input type="number" id="qty3" name="quantity" min="1" max="5"><br/>
+									Add to cart <input id="ch3" type="checkbox" name="add1" value="1" onclick="myFunction3()"><br>
+									Total <a id="total3"></a>
+
+								</div>
+							</div>
+
+						</div>
+
+						<!-- Product 4 -->
+
+						<div class="product-item mobiles">
+							<div class="product product_filter">
+								<div class="product_image">
+									<a id="prod4"></a>
+									<img src="{% static 'shopping/images/mob4.jpg' %}" alt="">
+								</div>
+								<div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>sale</span></div>
+								<div class="favorite favorite_left"></div>
+								<div class="product_info">
+									<h6 class="product_name"><a href="single.html">Oppo F9 Pro</a></h6>
+									<div class="product_price">Rs25000</div>
+									Quantity <input type="number" id="qty4" name="quantity" min="1" max="5"><br/>
+									Add to cart <input id="ch4" type="checkbox" name="add1" value="1" onclick="myFunction4()"><br>
+									Total <a id="total4"></a>
+								</div>
+							</div>
+
+						</div>
+
+						<!-- Product 5 -->
+
+						<div class="product-item mobiles">
+							<div class="product product_filter">
+								<div class="product_image">
+									<a id="prod5"></a>
+									<img src="{% static 'shopping/images/mob5.jpg' %}" alt="">
+								</div>
+								<div class="favorite"></div>
+								<div class="product_info">
+									<h6 class="product_name"><a href="single.html">iPhone XS Max</a></h6>
+									<div class="product_price">Rs100000</div>
+									Quantity <input type="number" id="qty5" name="quantity" min="1" max="5"><br/>
+									Add to cart <input id="ch5" type="checkbox" name="add1" value="1" onclick="myFunction5()"><br>
+									Total <a id="total5"></a>
+								</div>
+							</div>
+
+						</div>
+
+						<!-- Product 6 -->
+
+						<div class="product-item laptop">
+							<div class="product discount product_filter">
+								<div class="product_image">
+									<a id="prod6"></a>
+									<img src="{% static 'shopping/images/lap1.jpg' %}" alt="">
+								</div>
+								<div class="favorite favorite_left"></div>
+
+								<div class="product_info">
+									<h6 class="product_name"><a href="#single.html">Macbook Air 2017</a></h6>
+									<div class="product_price">Rs60000</div>
+									Quantity <input type="number" id="qty6" name="quantity" min="1" max="5"><br/>
+									Add to cart <input id="ch6" type="checkbox" name="add1" value="1" onclick="myFunction6()"><br>
+									Total <a id="total6"></a>
+								</div>
+							</div>
+
+						</div>
+
+						<!-- Product 7 -->
+
+						<div class="product-item laptop">
+							<div class="product product_filter">
+								<div class="product_image">
+									<a id="prod7"></a>
+									<img src="{% static 'shopping/images/lap2.jpg' %}" alt="">
+								</div>
+								<div class="favorite"></div>
+								<div class="product_info">
+									<h6 class="product_name"><a href="single.html">Alienware 15R3</a></h6>
+									<div class="product_price">Rs200000</div>
+									Quantity <input type="number" id="qty7" name="quantity" min="1" max="5"><br/>
+									Add to cart <input id="ch7" type="checkbox" name="add1" value="1" onclick="myFunction7()"><br>
+									Total <a id="total7"></a>
+								</div>
+							</div>
+
+						</div>
+
+						<!-- Product 8 -->
+
+						<div class="product-item laptop">
+							<div class="product product_filter">
+								<div class="product_image">
+									<a id="prod8"></a>
+									<img src="{% static 'shopping/images/lap3.jpg' %}" alt="">
+								</div>
+								<div class="favorite"></div>
+								<div class="product_info">
+									<h6 class="product_name"><a href="single.html">Asus Rog Strix</a></h6>
+									<div class="product_price">Rs120000</div>
+									Quantity <input type="number" id="qty8" name="quantity" min="1" max="5"><br/>
+									Add to cart <input id="ch8" type="checkbox" name="add1" value="1" onclick="myFunction8()"><br>
+									Total <a id="total8"></a>
+								</div>
+							</div>
+
+						</div>
+
+						<!-- Product 9 -->
+
+						<div class="product-item laptop">
+							<div class="product product_filter">
+								<div class="product_image">
+									<a id="prod9"></a>
+									<img src="{% static 'shopping/images/lap4.jpg' %}" alt="">
+								</div>
+								<div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>sale</span></div>
+								<div class="favorite favorite_left"></div>
+								<div class="product_info">
+									<h6 class="product_name"><a href="single.html">Microsoft Surface Pro</a></h6>
+									<div class="product_price">Rs100000</div>
+									Quantity <input type="number" id="qty9" name="quantity" min="1" max="5"><br/>
+									Add to cart <input id="ch9" type="checkbox" name="add1" value="1" onclick="myFunction9()"><br>
+									Total <a id="total9"></a>
+								</div>
+							</div>
+
+						</div>
+
+						<!-- Product 10 -->
+
+						<div class="product-item appliance">
+							<div class="product discount product_filter">
+								<div class="product_image">
+									<a id="prod10"></a>
+									<img src="{% static 'shopping/images/apl1.jpg' %}" alt="">
+								</div>
+								<div class="favorite favorite_left"></div>
+								<div class="product_info">
+									<h6 class="product_name"><a href="single.html">MI TV 4A Pro</a></h6>
+									<div class="product_price">Rs25000</div>
+									Quantity <input type="number" id="qty10" name="quantity" min="1" max="5"><br/>
+									Add to cart <input id="ch10" type="checkbox" name="add1" value="1" onclick="myFunction10()"><br>
+									Total <a id="total10"></a>
+								</div>
+							</div>
+
+						</div>
+		<!-- Product 11 -->
+
+						<div class="product-item appliance">
+							<div class="product discount product_filter">
+								<div class="product_image">
+									<a id="prod11"></a>
+									<img src="{% static 'shopping/images/apl2.jpg' %}" alt="">
+								</div>
+								<div class="favorite favorite_left"></div>
+
+								<div class="product_info">
+									<h6 class="product_name"><a href="single.html">Sony Home Theater</a></h6>
+									<div class="product_price">Rs20000</div>
+									Quantity <input type="number" id="qty11" name="quantity" min="1" max="5"><br/>
+									Add to cart <input id="ch11" type="checkbox" name="add1" value="1" onclick="myFunction11()"><br>
+									Total <a id="total11"></a>
+								</div>
+							</div>
+
+						</div>
+		<!-- Product 12 -->
+
+						<div class="product-item appliance">
+							<div class="product discount product_filter">
+								<div class="product_image">
+									<a id="prod12"></a>
+									<img src="{% static 'shopping/images/apl3.jpg' %}" alt="">
+								</div>
+								<div class="favorite favorite_left"></div>
+
+								<div class="product_info">
+									<h6 class="product_name"><a href="single.html">Canon 1300D DSLR</a></h6>
+									<div class="product_price">Rs20000</div>
+									Quantity <input type="number" id="qty12" name="quantity" min="1" max="5"><br/>
+									Add to cart <input id="ch12" type="checkbox" name="add1" value="1" onclick="myFunction12()"><br>
+									Total <a id="total12"></a>
+								</div>
+							</div>
+
+						</div>
+		<!-- Product 13 -->
+
+						<div class="product-item appliance">
+							<div class="product discount product_filter">
+								<div class="product_image">
+									<a id="prod13"></a>
+									<img src="{% static 'shopping/images/apl4.jpg' %}" alt="">
+								</div>
+								<div class="favorite favorite_left"></div>
+
+								<div class="product_info">
+									<h6 class="product_name"><a href="single.html">Apple Watch</a></h6>
+									<div class="product_price">Rs27000</div>
+									Quantity <input type="number" id="qty13" name="quantity" min="1" max="5"><br/>
+									Add to cart <input id="ch13" type="checkbox" name="add1" value="1" onclick="myFunction13()"><br>
+									Total <a id="total13"></a>
+								</div>
+							</div>
+
+						</div>
+		<!-- Product 14 -->
+
+						<div class="product-item appliance">
+							<div class="product discount product_filter">
+								<div class="product_image">
+									<a id="prod14"></a>
+									<img src="{% static 'shopping/images/apl5.jpg' %}" alt="">
+								</div>
+								<div class="favorite favorite_left"></div>
+
+								<div class="product_info">
+									<h6 class="product_name"><a href="single.html">LG Refridgerator</a></h6>
+									<div class="product_price">Rs15000</div>
+									Quantity <input type="number" id="qty14" name="quantity" min="1" max="5"><br/>
+									Add to cart <input id="ch14" type="checkbox" name="add1" value="1" onclick="myFunction14()"><br>
+									Total <a id="total14"></a>
+								</div>
+							</div>
+
+						</div>
+		<!-- Product 15 -->
+
+						<div class="product-item appliance">
+							<div class="product discount product_filter">
+								<div class="product_image">
+									<a id="prod15"></a>
+									<img src="{% static 'shopping/images/apl6.jpg' %}" alt="">
+								</div>
+								<div class="favorite favorite_left"></div>
+
+								<div class="product_info">
+									<h6 class="product_name"><a href="single.html">Bosch Washing Machine</a></h6>
+									<div class="product_price">Rs15000</div>
+									Quantity <input type="number" id="qty15" name="quantity" min="1" max="5"><br/>
+									Add to cart <input id="ch15" type="checkbox" name="add1" value="1" onclick="myFunction15()"><br>
+									Total <a id="total15"></a>
+								</div>
+							</div>
+
+							</div>
+							</div>
+
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp	<h3>&nbsp&nbsp Done&nbsp&nbsp<input type="checkbox" name="add1" value="1" onclick="total()"><br><br/>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp	<h3>&nbsp&nbsp Grand Total&nbsp&nbsp<a id="grandtotal"></a>
+		<input type="hidden" value="" name="total"><br/>
+	 <br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i><input type="Submit"><a>
+</form>
+	<!-- Benefit -->
+
+	<div class="benefit">
+		<div class="container">
+			<div class="row benefit_row">
+				<div class="col-lg-3 benefit_col">
+					<div class="benefit_item d-flex flex-row align-items-center">
+						<div class="benefit_icon"><i class="fa fa-truck" aria-hidden="true"></i></div>
+						<div class="benefit_content">
+							<h6>free shipping</h6>
+							<p>Suffered Alteration in Some Form</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3 benefit_col">
+					<div class="benefit_item d-flex flex-row align-items-center">
+						<div class="benefit_icon"><i class="fa fa-money" aria-hidden="true"></i></div>
+						<div class="benefit_content">
+							<h6>cash on delivery</h6>
+							<p>The Internet Tend To Repeat</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3 benefit_col">
+					<div class="benefit_item d-flex flex-row align-items-center">
+						<div class="benefit_icon"><i class="fa fa-undo" aria-hidden="true"></i></div>
+						<div class="benefit_content">
+							<h6>45 days return</h6>
+							<p>Making it Look Like Readable</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3 benefit_col">
+					<div class="benefit_item d-flex flex-row align-items-center">
+						<div class="benefit_icon"><i class="fa fa-clock-o" aria-hidden="true"></i></div>
+						<div class="benefit_content">
+							<h6>opening all week</h6>
+							<p>8AM - 09PM</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- Footer -->
+
+
+
+</div>
+<script>
+function myFunction1() {
+	var price=13000;
+	var qty = document.getElementById("qty1").value;
+	window.tot1=price*qty;
+	document.getElementById("total1").innerHTML =tot1;
+	return tot1
+}
+function myFunction2() {
+	var price=12000;
+	var qty = document.getElementById("qty2").value;
+	window.tot2=price*qty;
+	document.getElementById("total2").innerHTML =tot2;
+	return tot2
+}
+function myFunction3() {
+	var price=27000;
+	var qty = document.getElementById("qty3").value;
+	window.tot3=price*qty;
+	document.getElementById("total3").innerHTML =tot3;
+	return tot3
+}
+function myFunction4() {
+	var price=25000;
+	var qty = document.getElementById("qty4").value;
+	window.tot4=price*qty;
+	document.getElementById("total4").innerHTML =tot4;
+	return tot4
+}
+function myFunction5() {
+	var price=100000;
+	var qty = document.getElementById("qty5").value;
+	window.tot5=price*qty;
+	document.getElementById("total5").innerHTML =tot5;
+	return tot5
+}
+function myFunction6() {
+	var price=60000;
+	var qty = document.getElementById("qty6").value;
+	window.tot6=price*qty;
+	document.getElementById("total6").innerHTML =tot6;
+	return tot6
+}
+function myFunction7() {
+	var price=200000;
+	var qty = document.getElementById("qty7").value;
+	window.tot7=price*qty;
+	document.getElementById("total7").innerHTML =tot7;
+	return tot7
+}
+function myFunction8() {
+	var price=120000;
+	var qty = document.getElementById("qty8").value;
+	window.tot8=price*qty;
+	document.getElementById("total8").innerHTML =tot8;
+	return tot8
+}
+function myFunction9() {
+	var price=100000;
+	var qty = document.getElementById("qty9").value;
+	window.tot9=price*qty;
+	document.getElementById("total9").innerHTML =tot9;
+	return tot9
+}
+function myFunction10() {
+	var price=25000;
+	var qty = document.getElementById("qty10").value;
+	window.tot10=price*qty;
+	document.getElementById("total10").innerHTML =tot10;
+	return tot10
+}
+function myFunction11() {
+	var price=20000;
+	var qty = document.getElementById("qty11").value;
+	window.tot11=price*qty;
+	document.getElementById("total11").innerHTML =tot11;
+	return tot11
+}
+function myFunction12() {
+	var price=20000;
+	var qty = document.getElementById("qty12").value;
+	window.tot12=price*qty;
+	document.getElementById("total12").innerHTML =tot12;
+	return tot12
+}
+function myFunction13() {
+	var price=27000;
+	var qty = document.getElementById("qty13").value;
+	window.tot13=price*qty;
+	document.getElementById("total13").innerHTML =tot13;
+	return tot13
+}
+function myFunction14() {
+	var price=15000;
+	var qty = document.getElementById("qty14").value;
+	window.tot14=price*qty;
+	document.getElementById("total14").innerHTML =tot14;
+	return tot14
+}
+function myFunction15() {
+	var price=15000;
+	var qty = document.getElementById("qty15").value;
+	window.tot15=price*qty;
+	document.getElementById("total15").innerHTML =tot15;
+	return tot15
+}
+
+function total() {
+	window.grtot=myFunction1()+myFunction2()+myFunction3()+myFunction4()+myFunction5()+myFunction6()+myFunction7()+myFunction8()+myFunction9()+myFunction10()+myFunction11()+myFunction12()+myFunction13()+myFunction14()+myFunction15();
+	document.getElementById("grandtotal").innerHTML =window.grtot;
+}
+</script>
+
+<script>
+function myFunction() {
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
+</script>
+<script src='{% static "shopping/js/jquery-3.2.1.min.js"%}'></script>
+<script src='{% static "shopping/styles/bootstrap4/popper.js"%}'></script>
+<script src='{% static "shopping/styles/bootstrap4/bootstrap.min.js"%}'></script>
+<script src='{% static "shopping/plugins/Isotope/isotope.pkgd.min.js"%}'></script>
+<script src='{% static "shopping/plugins/OwlCarousel2-2.2.1/owl.carousel.js"%}'></script>
+<script src='{% static "shopping/plugins/easing/easing.js"%}'></script>
+<script src='{% static "shopping/js/custom.js"%}'></script>
+</body>
+
+</html>
